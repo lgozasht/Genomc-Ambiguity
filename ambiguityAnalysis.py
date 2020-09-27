@@ -68,6 +68,7 @@ mafCount = {}
 NmafCount = {}
 for head in ambDicPerSite:
     mafCount[head] = 0
+    NmafCount[head] = 0 
     for i in siteAmbDic:
         if i in NDicPerSite:
             NmafCount[head] += 1
@@ -76,7 +77,7 @@ for head in ambDicPerSite:
 
  
 with open('ambiguity.tsv','w') as f:
-    f.write('Sample\tAmb_Count\tN_Count\tAmb_Count_MAF>={0}\tN_Count_MAF>={0}\t')
+    f.write('Sample\tAmb_Count\tN_Count\tAmb_Count_MAF>={0}\tN_Count_MAF>={0}\t'.format(str(args['min_MAF'])))
     for site in siteAmbDic:
         f.write('{1}_{0}_{2}\t'.format(site,refDic[site],siteAmbDic[site]))
     f.write('\n')
