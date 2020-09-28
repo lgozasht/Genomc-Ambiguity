@@ -70,7 +70,7 @@ for head in ambDicPerSite:
     mafCount[head] = 0
     NmafCount[head] = 0 
     for i in siteAmbDic:
-        if i in NDicPerSite:
+        if i in NDicPerSite[head]:
             NmafCount[head] += 1
         elif i in ambDicPerSite[head]:
             mafCount[head] += 1
